@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout :: page_head}"><title>LMS Prototype</title></head>
+<body>
+
+<!--  navbar-->
+<nav th:replace="~{layout :: page_navbar}"></nav>
+
+<div class="container py-3">
+    <h1 class="text-center my-4">List of Students</h1>
+    <a class="btn btn-primary mb-3" href="students/create">Add Student</a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Contact No.</th>
+                <th>Email Id</th>
+                <th>Seat No.</th>
+                <th>Shift</th>
+                <th>Payment Status</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Action</th>
+
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+<!--        Every student that we have in the students list-->
+            <tr th:each="student: ${students}">
+                <td th:text="${student.id}"></td>
+                <td th:text="${student.name}"></td>
+                <td th:text="${student.contactNo}"></td>
+                <td th:text="${student.email}"></td>
+                <td th:text="${student.seatNo}"></td>
+                <td th:text="${student.shift}"></td>
+                <td th:text="${student.paymentStatus}"></td>
+                <td th:text="${student.startDate}"></td>
+                <td th:text="${student.endDate}"></td>
+
+                <td style="white-space: nowrap">
+                    <a class="btn btn-primary btn-sm"
+                    th:href="@{/students/edit(id=${student.id})}">Edit</a>
+
+                    <a class="btn btn-danger btn-sm"
+                       th:href="@{/students/delete(id=${student.id})}"
+                       onclick="return confirm('Are you sure ?')">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<footer th:replace="~{layout :: page_footer}"></footer>
+</body>
+</html>
