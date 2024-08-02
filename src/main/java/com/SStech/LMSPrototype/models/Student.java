@@ -9,18 +9,15 @@ import java.time.LocalDate;
 public class Student {
     @Id
     private int id;//autogen
-    private int contactNo;
+    private String contactNo;
     private int seatNo;
     private String name;
     private String email;
     private String shift;
     private String paymentStatus;
-
     //dates added
     private LocalDate startDate;
     private LocalDate endDate;//autogen
-
-
 
     public int getId() { return id; }
 
@@ -28,11 +25,11 @@ public class Student {
         this.id = id;
     }
 
-    public int getContactNo() {
+    public String getContactNo() {
         return contactNo;
     }
 
-    public void setContactNo(int contactNo) {
+    public void setContactNo(String contactNo) {
         this.contactNo = contactNo;
     }
 

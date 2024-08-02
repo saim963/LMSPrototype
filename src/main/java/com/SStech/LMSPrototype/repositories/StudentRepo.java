@@ -25,7 +25,7 @@ public class StudentRepo {
             Student student = new Student();
             student.setId(rows.getInt("id"));
             student.setName(rows.getString("name"));
-            student.setContactNo(rows.getInt("contactNo"));
+            student.setContactNo(rows.getString("contactNo"));
             student.setEmail(rows.getString("email"));
             student.setSeatNo(rows.getInt("seatNo"));
             student.setShift(rows.getString("shift"));
@@ -47,7 +47,7 @@ public class StudentRepo {
             Student student = new Student();
             student.setId(rows.getInt("id"));
             student.setName(rows.getString("name"));
-            student.setContactNo(rows.getInt("contactNo"));
+            student.setContactNo(rows.getString("contactNo"));
             student.setEmail(rows.getString("email"));
             student.setSeatNo(rows.getInt("seatNo"));
             student.setShift(rows.getString("shift"));
@@ -63,13 +63,13 @@ public class StudentRepo {
 
     public Student getStudent(String name){
         String sql = "SELECT * FROM student WHERE name=?";
-        SqlRowSet rows =jdbcTemplate.queryForRowSet(sql,name);
+        SqlRowSet rows = jdbcTemplate.queryForRowSet(sql,name);
 
         if(rows.next()){
             Student student = new Student();
             student.setId(rows.getInt("id"));
             student.setName(rows.getString("name"));
-            student.setContactNo(rows.getInt("contactNo"));
+            student.setContactNo(rows.getString("contactNo"));
             student.setEmail(rows.getString("email"));
             student.setSeatNo(rows.getInt("seatNo"));
             student.setShift(rows.getString("shift"));

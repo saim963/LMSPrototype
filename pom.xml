@@ -64,6 +64,14 @@
 			<scope>test</scope>
 		</dependency>
 
+<!--		Extra added-->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+<!--			<version>6.1.10</version>-->
+		</dependency>
+
+
 	</dependencies>
 
 	<build>
