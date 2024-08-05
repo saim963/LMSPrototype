@@ -27,7 +27,7 @@ public class StudentRepo {
             student.setName(rows.getString("name"));
             student.setContactNo(rows.getString("contactNo"));
             student.setEmail(rows.getString("email"));
-            student.setSeatNo(rows.getInt("seatNo"));
+            student.setSeatNo(rows.getString("seatNo"));
             student.setShift(rows.getString("shift"));
             student.setPaymentStatus(rows.getString("paymentStatus"));
 
@@ -49,7 +49,7 @@ public class StudentRepo {
             student.setName(rows.getString("name"));
             student.setContactNo(rows.getString("contactNo"));
             student.setEmail(rows.getString("email"));
-            student.setSeatNo(rows.getInt("seatNo"));
+            student.setSeatNo(rows.getString("seatNo"));
             student.setShift(rows.getString("shift"));
             student.setPaymentStatus(rows.getString("paymentStatus"));
 
@@ -71,7 +71,7 @@ public class StudentRepo {
             student.setName(rows.getString("name"));
             student.setContactNo(rows.getString("contactNo"));
             student.setEmail(rows.getString("email"));
-            student.setSeatNo(rows.getInt("seatNo"));
+            student.setSeatNo(rows.getString("seatNo"));
             student.setShift(rows.getString("shift"));
             student.setPaymentStatus(rows.getString("paymentStatus"));
 

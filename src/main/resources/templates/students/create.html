@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout :: page_head}"><title>LMS Prototype</title></head>
+<body>
+
+<!--  navbar-->
+<nav th:replace="~{layout :: page_navbar}"></nav>
+
+<div class="container py-3">
+    <div class = "row">
+        <div class = "col-md-8 mx-auto rounded broder p-4 m-4">
+            <h2 class = "text-center mb-5">New student</h2>
+
+            <form method = "post" th:object="${studentDto}">
+
+                <!--Name-->
+                <div class = "row mb-3">
+                    <label class="col-sm-4 col-form-label">Name:</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" th:field="${studentDto.name}">
+                        <p th:if="${#fields.hasErrors('name')}"
+                        th:errorclass="text-danger"
+                        th:errors="${studentDto.name}"></p>
+                    </div>
+                </div>
+                <!--Contact number-->
+                <div class = "row mb-3">
+                    <label class="col-sm-4 col-form-label">Contact No.:</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" th:field="${studentDto.contactNo}">
+                        <p th:if="${#fields.hasErrors('contactNo')}"
+                           th:errorclass="text-danger"
+                           th:errors="${studentDto.contactNo}"></p>
+                    </div>
+                </div>
+                <!--Email id-->
+                <div class = "row mb-3">
+                    <label class="col-sm-4 col-form-label">Email Id:</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" th:field="${studentDto.email}">
+                        <p th:if="${#fields.hasErrors('email')}"
+                           th:errorclass="text-danger"
+                           th:errors="${studentDto.email}"></p>
+                    </div>
+                </div>
+                <!--Seat No.-->
+                <div class = "row mb-3">
+                    <label class="col-sm-4 col-form-label">Seat No.:</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" th:field="${studentDto.seatNo}">
+                        <p th:if="${#fields.hasErrors('seatNo')}"
+                           th:errorclass="text-danger"
+                           th:errors="${studentDto.seatNo}"></p>
+                    </div>
+                </div>
+                <!--Shift-->
+                <div class = "row mb-3">
+                    <label class="col-sm-4 col-form-label">Shift:</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" th:field="${studentDto.shift}">
+                        <p th:if="${#fields.hasErrors('shift')}"
+                           th:errorclass="text-danger"
+                           th:errors="${studentDto.shift}"></p>
+                    </div>
+                </div>
+                <!--Payment Status-->
+                <div class = "row mb-3">
+                    <label class="col-sm-4 col-form-label">Payment Status:</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" th:field="${studentDto.paymentStatus}">
+                        <p th:if="${#fields.hasErrors('paymentStatus')}"
+                           th:errorclass="text-danger"
+                           th:errors="${studentDto.paymentStatus}"></p>
+                    </div>
+                </div>
+                <!--Start Date-->
+                <div class = "row mb-3">
+                    <label class="col-sm-4 col-form-label">Start Date:</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" th:field="${studentDto.startDate}">
+                        <p th:if="${#fields.hasErrors('startDate')}"
+                           th:errorclass="text-danger"
+                           th:errors="${studentDto.startDate}"></p>
+                    </div>
+                </div>
+
+                <!--Submit and  cancel button-->
+                <div class="row">
+                    <div class = "offset-sm-4 col-sm-4 d-grid">
+                        <button type="submit" class = "btn btn-primary">Submit</button>
+                    </div>
+                    <div class = "col-sm-4 d-grid">
+                        <a class = "btn btn-outline-primary" href="/students">Cancel</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<footer th:replace="~{layout :: page_footer}"></footer>
+</body>
+</html>
